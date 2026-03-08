@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ctm2s2dgfv72b"]
+
+[ext_resource type="FontFile" uid="uid://d61ulbcxvaki" path="res://Assets/Fonts/operius/operius-mono.ttf" id="1_1noch"]
+
+[resource]
+font = ExtResource("1_1noch")
+font_size = 28
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)

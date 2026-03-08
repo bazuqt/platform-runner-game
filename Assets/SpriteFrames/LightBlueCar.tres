@@ -1,0 +1,51 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://d0mu1qul127ix"]
+
+[ext_resource type="Texture2D" uid="uid://dltbf8ag35n7t" path="res://Assets/Spritesheets/Obstacles/poor_car.png" id="1_d0s5c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ntbf"]
+atlas = ExtResource("1_d0s5c")
+region = Rect2(0, 0, 64, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuqks"]
+atlas = ExtResource("1_d0s5c")
+region = Rect2(64, 0, 64, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h055x"]
+atlas = ExtResource("1_d0s5c")
+region = Rect2(128, 0, 64, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ctby"]
+atlas = ExtResource("1_d0s5c")
+region = Rect2(192, 0, 64, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wnxq"]
+atlas = ExtResource("1_d0s5c")
+region = Rect2(0, 0, 64, 30)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ntbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuqks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h055x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ctby")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wnxq")
+}],
+"loop": true,
+"name": &"game_over",
+"speed": 5.0
+}]

@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://cyejbnn7xdmdx"]
+
+[ext_resource type="Texture2D" uid="uid://b7ya8g4o8wr66" path="res://Assets/Spritesheets/Obstacles/bike.png" id="1_1148i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w77tq"]
+atlas = ExtResource("1_1148i")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8ub6"]
+atlas = ExtResource("1_1148i")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1icfl"]
+atlas = ExtResource("1_1148i")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu68v"]
+atlas = ExtResource("1_1148i")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbic4"]
+atlas = ExtResource("1_1148i")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81724"]
+atlas = ExtResource("1_1148i")
+region = Rect2(0, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w77tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8ub6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1icfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu68v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbic4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81724")
+}],
+"loop": true,
+"name": &"game_over",
+"speed": 5.0
+}]

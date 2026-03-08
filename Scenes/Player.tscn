@@ -1,0 +1,227 @@
+[gd_scene load_steps=33 format=3 uid="uid://cd2l4j8607fl2"]
+
+[ext_resource type="Script" path="res://Scripts/player_controller.gd" id="1_eutmu"]
+[ext_resource type="PackedScene" uid="uid://c6mw64vaain35" path="res://Scenes/UI/Scoreboard.tscn" id="2_jbsfp"]
+[ext_resource type="AudioStream" uid="uid://bkgcmw3kboqql" path="res://Assets/Audio/Music/PauseMenuMusicRepeat.mp3" id="2_ju6ul"]
+[ext_resource type="AudioStream" uid="uid://7vm54daq1ful" path="res://Assets/Audio/Sound/JumpSoundEffect.mp3" id="3_i1qiv"]
+[ext_resource type="Texture2D" uid="uid://jlx4wsuhfpks" path="res://Assets/Spritesheets/character.png" id="3_uk65j"]
+[ext_resource type="AudioStream" uid="uid://dyyyyxpfk0cua" path="res://Assets/Audio/Sound/PointSoundEffect.mp3" id="4_com33"]
+[ext_resource type="PackedScene" uid="uid://cc5hpx53qu6lo" path="res://Scenes/UI/AudioDetect.tscn" id="4_t6dma"]
+[ext_resource type="PackedScene" uid="uid://c6fpt0m8qqgbb" path="res://Scenes/GameOver.tscn" id="5_myimr"]
+[ext_resource type="AudioStream" uid="uid://d0wrr74hfsgch" path="res://Assets/Audio/Sound/GameOverSoundEffect.mp3" id="5_uwb4g"]
+[ext_resource type="Script" path="res://Scripts/effects.gd" id="7_t3x0e"]
+[ext_resource type="Texture2D" uid="uid://c5nee3tkouch5" path="res://Assets/Spritesheets/plus_points.png" id="8_cqq68"]
+[ext_resource type="PackedScene" uid="uid://cftlgaapsbxhj" path="res://Scenes/Menu/PauseMenu.tscn" id="8_mlvnh"]
+[ext_resource type="Script" path="res://Scripts/Audio/music_handler.gd" id="9_fj6tr"]
+[ext_resource type="AudioStream" uid="uid://dwxm7hlmluqj2" path="res://Assets/Audio/Music/MainGamePlayMusicStart.mp3" id="11_4agmp"]
+[ext_resource type="AudioStream" uid="uid://oevmk0y502f8" path="res://Assets/Audio/Music/MainGamePlayMusicRepeat.mp3" id="12_tmqj1"]
+[ext_resource type="Script" path="res://Scripts/Audio/main_menu_effects.gd" id="13_73l1v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3wli"]
+atlas = ExtResource("3_uk65j")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwhx2"]
+atlas = ExtResource("3_uk65j")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdr7n"]
+atlas = ExtResource("3_uk65j")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isk35"]
+atlas = ExtResource("3_uk65j")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrdnd"]
+atlas = ExtResource("3_uk65j")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpfte"]
+atlas = ExtResource("3_uk65j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5mgl"]
+atlas = ExtResource("3_uk65j")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86yks"]
+atlas = ExtResource("3_uk65j")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uv45"]
+atlas = ExtResource("3_uk65j")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eollt"]
+atlas = ExtResource("3_uk65j")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1lw7"]
+atlas = ExtResource("3_uk65j")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osqjq"]
+atlas = ExtResource("3_uk65j")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rej3"]
+atlas = ExtResource("3_uk65j")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qpknv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3wli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwhx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdr7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isk35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrdnd")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpfte")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5mgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86yks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uv45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eollt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1lw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osqjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rej3")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rs4bv"]
+height = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_noujl"]
+
+[node name="Player" type="CharacterBody2D"]
+texture_filter = 1
+collision_mask = 7
+floor_stop_on_slope = false
+floor_constant_speed = true
+script = ExtResource("1_eutmu")
+speed = 200
+JUMP_SPEED = -450
+pause_music = ExtResource("2_ju6ul")
+jump_effect = ExtResource("3_i1qiv")
+bonus_effect = ExtResource("4_com33")
+gameo_effect = ExtResource("5_uwb4g")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -11)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_qpknv")
+animation = &"Idle"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_rs4bv")
+
+[node name="Camera" type="Camera2D" parent="."]
+offset = Vector2(245, -106)
+enabled = false
+
+[node name="Scoreboard" parent="." instance=ExtResource("2_jbsfp")]
+
+[node name="Audio" parent="." instance=ExtResource("4_t6dma")]
+visible = false
+offset_left = 500.0
+offset_top = -200.0
+offset_right = 550.0
+offset_bottom = 0.0
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_noujl")
+debug_color = Color(0.790067, 0.38201, 0.520328, 0.42)
+
+[node name="ObstacleSpawn" type="Marker2D" parent="."]
+position = Vector2(610, 0)
+
+[node name="PlayerEffects" type="Node2D" parent="."]
+script = ExtResource("7_t3x0e")
+
+[node name="Success" type="Sprite2D" parent="PlayerEffects"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -40)
+texture = ExtResource("8_cqq68")
+
+[node name="EndPos" type="Marker2D" parent="PlayerEffects"]
+position = Vector2(0, -70)
+
+[node name="InitPos" type="Marker2D" parent="PlayerEffects"]
+position = Vector2(0, -32)
+
+[node name="UI" type="Node2D" parent="."]
+z_index = 10
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("8_mlvnh")]
+unique_name_in_owner = true
+visible = false
+offset_left = -75.0
+offset_top = -286.0
+offset_right = -75.0
+offset_bottom = -286.0
+
+[node name="GameOver" parent="UI" instance=ExtResource("5_myimr")]
+offset_left = -75.0
+offset_top = -286.0
+offset_right = -75.0
+offset_bottom = -286.0
+
+[node name="LevelMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_4agmp")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+script = ExtResource("9_fj6tr")
+main_melody = ExtResource("11_4agmp")
+repeat_melody = ExtResource("12_tmqj1")
+
+[node name="SoundEfects" type="AudioStreamPlayer2D" parent="."]
+max_polyphony = 4
+bus = &"Effects"
+script = ExtResource("13_73l1v")
+
+[node name="Listener" type="AudioListener2D" parent="."]
+current = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_hitbox_area_exited"]

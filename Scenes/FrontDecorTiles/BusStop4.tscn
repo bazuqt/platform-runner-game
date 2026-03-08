@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://duajoymchambi"]
+
+[ext_resource type="Script" path="res://Scenes/FrontDecorTiles/bus_stop_4.gd" id="1_ikv1k"]
+[ext_resource type="Texture2D" uid="uid://mqajpjsp8k5h" path="res://Assets/Spritesheets/FrontOfBuildingDecorations/BusStop4.png" id="1_p6sai"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x3c47"]
+polygon = PackedVector2Array(-112, -29, 80, -29, 95, -29, 95, -21, 95, 82, 80, 82, 80, -21, -106, -21, -106, 82, -112, 82)
+
+[sub_resource type="Gradient" id="Gradient_4m5v7"]
+offsets = PackedFloat32Array(0.00460829, 0.679724)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j632l"]
+gradient = SubResource("Gradient_4m5v7")
+fill = 1
+fill_from = Vector2(0.517094, 0.525641)
+
+[node name="BusStop4" type="Node2D"]
+script = ExtResource("1_ikv1k")
+
+[node name="BusStop4" type="Sprite2D" parent="."]
+position = Vector2(0, -91)
+texture = ExtResource("1_p6sai")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="BusStop4"]
+position = Vector2(16, -19)
+occluder = SubResource("OccluderPolygon2D_x3c47")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(300, 0)
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(302, -89)
+
+[node name="LightBluePointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-23, -123)
+texture = SubResource("GradientTexture2D_j632l")

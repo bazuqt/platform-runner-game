@@ -1,0 +1,95 @@
+[gd_scene load_steps=16 format=3 uid="uid://7resuy3mbqnb"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/credits.gd" id="1_twqfs"]
+[ext_resource type="Texture2D" uid="uid://c3tm2t70lyxys" path="res://Assets/Buttons/back_button.png" id="2_2c1pb"]
+[ext_resource type="FontFile" uid="uid://d61ulbcxvaki" path="res://Assets/Fonts/operius/operius-mono.ttf" id="3_wqog4"]
+[ext_resource type="Script" path="res://Scripts/Audio/main_menu_effects.gd" id="4_671x8"]
+[ext_resource type="AudioStream" uid="uid://dkl7wxmejbe2y" path="res://Assets/Audio/Sound/ButtonHoverSoundEffect.mp3" id="5_48wrk"]
+[ext_resource type="AudioStream" uid="uid://bg6pnh3w8npjc" path="res://Assets/Audio/Sound/ButtonHover2SoundEffect.mp3" id="6_htvcu"]
+[ext_resource type="AudioStream" uid="uid://bg6j36mp1knb7" path="res://Assets/Audio/Sound/ButtonHover3SoundEffect.mp3" id="7_1dcp5"]
+[ext_resource type="AudioStream" uid="uid://d3a6epwpqmkcc" path="res://Assets/Audio/Sound/ButtonHover4SoundEffect.mp3" id="8_dke2g"]
+[ext_resource type="AudioStream" uid="uid://f3fdrj78rmn4" path="res://Assets/Audio/Sound/ButtonHover5SoundEffect.mp3" id="9_f3r00"]
+[ext_resource type="AudioStream" uid="uid://ri72wwptvwob" path="res://Assets/Audio/Sound/ButtonHover6SoundEffect.mp3" id="10_vjntg"]
+[ext_resource type="AudioStream" uid="uid://blqstvibucdp" path="res://Assets/Audio/Sound/ButtonSelection4SoundEffect.mp3" id="11_b76pn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx4ci"]
+atlas = ExtResource("2_2c1pb")
+region = Rect2(0, 0, 157, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4k5xu"]
+atlas = ExtResource("2_2c1pb")
+region = Rect2(314, 0, 157, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enx5l"]
+atlas = ExtResource("2_2c1pb")
+region = Rect2(157, 0, 157, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sukh3"]
+font = ExtResource("3_wqog4")
+font_size = 14
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="Control" node_paths=PackedStringArray("out_pos_markerbtn", "in_pos_markerbtn", "out_pos_marker", "in_pos_marker")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_twqfs")
+out_pos_markerbtn = NodePath("OutMarkerBtn")
+in_pos_markerbtn = NodePath("InMarkerBtn")
+out_pos_marker = NodePath("OutMarker")
+in_pos_marker = NodePath("InMarker")
+
+[node name="Exit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 241.5
+offset_top = 400.0
+offset_right = 398.5
+offset_bottom = 460.0
+disabled = true
+texture_normal = SubResource("AtlasTexture_tx4ci")
+texture_pressed = SubResource("AtlasTexture_4k5xu")
+texture_hover = SubResource("AtlasTexture_enx5l")
+texture_disabled = SubResource("AtlasTexture_4k5xu")
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 400.0
+offset_right = 570.0
+offset_bottom = 549.0
+text = "Diego Herrera Olmos
+Lead Programmer
+
+Sunny
+Game developer, music/art
+
+Bazu
+Public relations, assets"
+label_settings = SubResource("LabelSettings_sukh3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OutMarkerBtn" type="Marker2D" parent="."]
+position = Vector2(241.5, 400)
+
+[node name="InMarkerBtn" type="Marker2D" parent="."]
+position = Vector2(242, 280)
+
+[node name="OutMarker" type="Marker2D" parent="."]
+position = Vector2(71, 400)
+
+[node name="InMarker" type="Marker2D" parent="."]
+position = Vector2(71, 115)
+
+[node name="Effects" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("4_671x8")
+hover_sound_effects = Array[AudioStreamMP3]([ExtResource("5_48wrk"), ExtResource("6_htvcu"), ExtResource("7_1dcp5"), ExtResource("8_dke2g"), ExtResource("9_f3r00"), ExtResource("10_vjntg")])
+button_sound_effect = ExtResource("11_b76pn")
+
+[connection signal="mouse_entered" from="Exit" to="Effects" method="play_hover_effect"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Exit" to="Effects" method="play_button_clicked_effect"]

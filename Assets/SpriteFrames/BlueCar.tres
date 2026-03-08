@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://be07c4vdiucmy"]
+
+[ext_resource type="Texture2D" uid="uid://bpv3q0hd1bc6o" path="res://Assets/Spritesheets/Obstacles/car.png" id="1_4pjfk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew2md"]
+atlas = ExtResource("1_4pjfk")
+region = Rect2(0, 0, 40, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tlr8"]
+atlas = ExtResource("1_4pjfk")
+region = Rect2(40, 0, 40, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o5sb"]
+atlas = ExtResource("1_4pjfk")
+region = Rect2(0, 0, 40, 20)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew2md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tlr8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o5sb")
+}],
+"loop": true,
+"name": &"game_over",
+"speed": 5.0
+}]

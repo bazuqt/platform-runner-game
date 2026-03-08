@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhl1js0sc1snn"]
+
+[ext_resource type="Script" path="res://Scenes/FrontDecorTiles/bus_stop_2.gd" id="1_6mxh8"]
+[ext_resource type="Texture2D" uid="uid://cj6pwuk032hi7" path="res://FrontOfBuildingDecorations/Busstop2.png" id="1_81e3d"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i5f0e"]
+polygon = PackedVector2Array(-112, -29, 112, -29, 112, -21, -106, -21, -106, 54, -112, 54)
+
+[sub_resource type="Gradient" id="Gradient_m26gj"]
+offsets = PackedFloat32Array(0, 0.679724)
+colors = PackedColorArray(0.567598, 0.728257, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kcp14"]
+gradient = SubResource("Gradient_m26gj")
+fill = 1
+fill_from = Vector2(0.517094, 0.525641)
+
+[node name="BusStop2" type="Node2D"]
+script = ExtResource("1_6mxh8")
+
+[node name="Busstop2" type="Sprite2D" parent="."]
+position = Vector2(10, -91)
+texture = ExtResource("1_81e3d")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Busstop2"]
+occluder = SubResource("OccluderPolygon2D_i5f0e")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(300, 0)
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(301, -61)
+
+[node name="LightBluePointLight2D" type="PointLight2D" parent="."]
+position = Vector2(34, -85)
+color = Color(0.38095, 0.352976, 1, 1)
+texture = SubResource("GradientTexture2D_kcp14")

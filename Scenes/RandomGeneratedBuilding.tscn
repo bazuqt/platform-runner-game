@@ -1,0 +1,29 @@
+[gd_scene load_steps=16 format=3 uid="uid://l83o5250qd2p"]
+
+[ext_resource type="Script" path="res://Scripts/random_generated_building.gd" id="1_76bu7"]
+[ext_resource type="Texture2D" uid="uid://iwxm6r36u5t3" path="res://Assets/Spritesheets/BuldingSprites/blue_house.png" id="2_mg4j3"]
+[ext_resource type="Texture2D" uid="uid://dimbcxq4hxbrv" path="res://Assets/Spritesheets/BuldingSprites/chicken_store.png" id="3_2th6m"]
+[ext_resource type="Texture2D" uid="uid://b44jkothqj3ps" path="res://Assets/Spritesheets/BuldingSprites/convini.png" id="4_4d3wf"]
+[ext_resource type="Texture2D" uid="uid://cqkafjkoooqu4" path="res://Assets/Spritesheets/BuldingSprites/convini_building.png" id="5_mxrv1"]
+[ext_resource type="Texture2D" uid="uid://bkknxxeobhpsr" path="res://Assets/Spritesheets/BuldingSprites/gyuudon_store.png" id="6_g1nnm"]
+[ext_resource type="Texture2D" uid="uid://choihhjyslmo4" path="res://Assets/Spritesheets/BuldingSprites/koban.png" id="7_ovjfw"]
+[ext_resource type="Texture2D" uid="uid://h3krh7o6gjba" path="res://Assets/Spritesheets/BuldingSprites/medium_building2.png" id="8_t4ery"]
+[ext_resource type="Texture2D" uid="uid://dd5n1y8k0ldtb" path="res://Assets/Spritesheets/BuldingSprites/medium_building3.png" id="9_bvymc"]
+[ext_resource type="Texture2D" uid="uid://dopvw3fq5m6d3" path="res://Assets/Spritesheets/BuldingSprites/medium_building.png" id="10_14ora"]
+[ext_resource type="Texture2D" uid="uid://6x8hb8agjv1c" path="res://Assets/Spritesheets/BuldingSprites/ramen_shop.png" id="11_tk50n"]
+[ext_resource type="Texture2D" uid="uid://dcgo36twa01v0" path="res://Assets/Spritesheets/BuldingSprites/slim_building2.png" id="12_u8rds"]
+[ext_resource type="Texture2D" uid="uid://b4eahk7cv7nhy" path="res://Assets/Spritesheets/BuldingSprites/slim_building.png" id="13_hlsoe"]
+[ext_resource type="Texture2D" uid="uid://d13fyjb0ca7hg" path="res://Assets/Spritesheets/BuldingSprites/small_building.png" id="14_xllfn"]
+[ext_resource type="Texture2D" uid="uid://cjw800t2q87y0" path="res://Assets/Spritesheets/BuldingSprites/yaoya.png" id="15_c6w5g"]
+
+[node name="RandomGeneratedBuilding" type="Node2D"]
+script = ExtResource("1_76bu7")
+front_sprites = Array[Resource]([ExtResource("2_mg4j3"), ExtResource("3_2th6m"), ExtResource("4_4d3wf"), ExtResource("5_mxrv1"), ExtResource("6_g1nnm"), ExtResource("7_ovjfw"), ExtResource("8_t4ery"), ExtResource("9_bvymc"), ExtResource("11_tk50n"), ExtResource("12_u8rds"), ExtResource("13_hlsoe"), ExtResource("15_c6w5g"), ExtResource("10_14ora"), ExtResource("14_xllfn")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-1, -180.5)
+scale = Vector2(0.9, 79.85)
+
+[node name="SpawnPoint" type="Marker2D" parent="."]

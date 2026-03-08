@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://ht64pi4po2hg"]
+
+[ext_resource type="Script" path="res://Scripts/starting_level.gd" id="1_raayv"]
+[ext_resource type="Texture2D" uid="uid://b3tc2rsjx7s4c" path="res://Assets/Spritesheets/skybox.png" id="2_88v18"]
+[ext_resource type="LabelSettings" uid="uid://clih3f77elq8t" path="res://Assets/LabelSettings/ready_level.tres" id="2_se4vi"]
+[ext_resource type="LabelSettings" uid="uid://bqyn73i3l5s5c" path="res://Assets/LabelSettings/go_level.tres" id="3_wu8ps"]
+[ext_resource type="AudioStream" uid="uid://coartxa32bkqt" path="res://Assets/Audio/Sound/ButtonSelection2SoundEffect.mp3" id="5_uqxkm"]
+
+[node name="StartingLevel" type="Control" node_paths=PackedStringArray("ready_marker", "inter_marker")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_raayv")
+ready_marker = NodePath("ReadyEnd")
+inter_marker = NodePath("InterPos")
+anim_speed = 1.0
+
+[node name="Background" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_top = -720.0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("2_88v18")
+
+[node name="Ready" type="Label" parent="."]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 160.0
+offset_right = 889.0
+offset_bottom = 189.0
+text = "Ready..."
+label_settings = ExtResource("2_se4vi")
+
+[node name="Go" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 185.0
+offset_top = 107.0
+offset_right = 456.0
+offset_bottom = 222.0
+text = "Go!"
+label_settings = ExtResource("3_wu8ps")
+
+[node name="ReadyEnd" type="Marker2D" parent="."]
+position = Vector2(-200, 160)
+
+[node name="InterPos" type="Marker2D" parent="."]
+position = Vector2(250, 160)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(320, -1080)
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_uqxkm")
+bus = &"Effects"

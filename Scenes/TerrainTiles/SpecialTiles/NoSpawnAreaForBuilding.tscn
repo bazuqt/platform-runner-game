@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://don853ccr35mb"]
+
+[ext_resource type="Script" path="res://Scenes/TerrainTiles/SpecialTiles/no_spawn_area_for_building.gd" id="1_do6b6"]
+
+[node name="NoSpawnAreaForBuilding" type="Node2D"]
+script = ExtResource("1_do6b6")
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(962, -56)
+scale = Vector2(93.48, 5.1545)
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(1920, 0)

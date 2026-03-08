@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bknesh4dk7sym"]
+
+[ext_resource type="Script" path="res://Assets/Spritesheets/Tree/tree_1.gd" id="1_hlu0n"]
+[ext_resource type="Texture2D" uid="uid://vmsrr5i3i4qw" path="res://Assets/Spritesheets/Tree/tree1.png" id="1_mtqcv"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8moi6"]
+polygon = PackedVector2Array(-82, -56, -77, -59, -71, -61, -68, -66, -69, -69, -70, -73, -69, -73, -69, -78, -66, -78, -64, -76, -62, -74, -61, -73, -61, -76, -61, -78, -59, -78, -57, -77, -55, -76, -55, -75, -53, -74, -52, -73, -51, -73, -51, -74, -45, -74, -40, -74, -39, -75, -37, -75, -37, -77, -39, -79, -36, -80, -34, -80, -32, -78, -27, -78, -27, -76, -26, -73, -22, -73, -19, -72, -13, -72, -11, -74, -9, -75, -8, -76, 1, -76, 6, -76, 6, -77, 10, -77, 12, -78, 11, -78, 11, -79, 12, -81, 10, -82, 8, -84, 12, -85, 12, -85, 14, -88, 18, -88, 21, -82, 22, -80, 23, -80, 22, -83, 21, -86, 20, -93, 21, -94, 23, -94, 25, -88, 27, -83, 28, -79, 30, -81, 33, -79, 34, -78, 34, -76, 32, -73, 31, -70, 33, -71, 34, -73, 38, -76, 41, -78, 42, -81, 42, -84, 42, -87, 36, -87, 34, -88, 32, -90, 37, -89, 38, -90, 40, -91, 43, -90, 47, -88, 47, -83, 47, -81, 50, -80, 54, -82, 56, -85, 58, -87, 63, -91, 64, -91, 67, -91, 68, -90, 68, -85, 67, -80, 67, -78, 71, -77, 73, -78, 73, -78, 74, -76, 74, -73, 74, -69, 74, -65, 75, -63, 75, -61, 74, -58, 74, -56, 70, -54, 70, -51, 75, -52, 74, -49, 72, -44, 55, -38, 40, -38, 24, -39, 21, -42, 18, -40, -42, -39, -54, -40, -61, -45, -72, -46, -79, -51)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_44owu"]
+polygon = PackedVector2Array(-66, 10, -62, 9, -59, 10, -57, 12, -54, 12, -52, 11, -49, 10, -49, 7, -49, 1, -50, 0, -51, -1, -51, -5, -49, -6, -46, -7, -46, -11, -42, -10, -41, -8, -42, -6, -44, -7, -46, -6, -46, -3, -42, 4, -39, 4, -34, -2, -30, -2, -30, -3, -27, -3, -27, -1, -25, 2, -26, 6, -27, 9, -37, 9, -37, 11, -35, 13, -31, 14, -30, 14, -30, 17, -32, 19, -38, 21, -42, 21, -49, 21, -58, 16, -62, 13)
+
+[node name="Tree1" type="Node2D"]
+script = ExtResource("1_hlu0n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -147)
+texture = ExtResource("1_mtqcv")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D"]
+occluder = SubResource("OccluderPolygon2D_8moi6")
+
+[node name="LightOccluder2D12" type="LightOccluder2D" parent="Sprite2D/LightOccluder2D"]
+occluder = SubResource("OccluderPolygon2D_44owu")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(286, 0)
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(292, -92)

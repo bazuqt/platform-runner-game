@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://cqadu32qylyhw"]
+
+[ext_resource type="Texture2D" uid="uid://d2pn1atvmub52" path="res://Assets/Spritesheets/background.png" id="1_0b6av"]
+[ext_resource type="Texture2D" uid="uid://wrsu6c04dwn" path="res://Assets/Spritesheets/Clouds/cloud1.png" id="2_wt5rg"]
+[ext_resource type="Texture2D" uid="uid://b562ew34e44gt" path="res://Assets/Spritesheets/Clouds/cloud2.png" id="3_gpagw"]
+[ext_resource type="Texture2D" uid="uid://x1nooy6qg4ca" path="res://Assets/Spritesheets/Clouds/cloud3.png" id="4_xcv5t"]
+[ext_resource type="Texture2D" uid="uid://dbfefd02yarvt" path="res://Assets/Spritesheets/Clouds/cloud4.png" id="5_60ovc"]
+[ext_resource type="Texture2D" uid="uid://ckffcr1eagfum" path="res://Assets/Spritesheets/Clouds/cloud5.png" id="6_ngtpl"]
+[ext_resource type="Texture2D" uid="uid://ct0lcmiq53oe7" path="res://Assets/Spritesheets/Clouds/cloud6.png" id="7_7rbjp"]
+[ext_resource type="Texture2D" uid="uid://cjmhygg8hblsq" path="res://Assets/Spritesheets/Clouds/cloud7.png" id="8_nquwp"]
+
+[node name="Parallax" type="Node2D"]
+texture_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(5.58317e-06, 0.743018, 0.996807, 1)
+
+[node name="PrallaxCLouds" type="Parallax2D" parent="."]
+texture_filter = 1
+autoscroll = Vector2(-60, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="PrallaxCLouds"]
+texture_filter = 1
+position = Vector2(161, 87)
+texture = ExtResource("2_wt5rg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="PrallaxCLouds"]
+texture_filter = 1
+position = Vector2(659, 27)
+texture = ExtResource("3_gpagw")
+
+[node name="Sprite2D3" type="Sprite2D" parent="PrallaxCLouds"]
+texture_filter = 1
+position = Vector2(836, 57)
+texture = ExtResource("4_xcv5t")
+
+[node name="Sprite2D4" type="Sprite2D" parent="PrallaxCLouds"]
+texture_filter = 1
+position = Vector2(684, 81)
+texture = ExtResource("5_60ovc")
+
+[node name="Sprite2D5" type="Sprite2D" parent="PrallaxCLouds"]
+texture_filter = 1
+position = Vector2(-102, 34)
+texture = ExtResource("6_ngtpl")
+
+[node name="Sprite2D6" type="Sprite2D" parent="PrallaxCLouds"]
+texture_filter = 1
+position = Vector2(300, 34)
+texture = ExtResource("7_7rbjp")
+
+[node name="Sprite2D7" type="Sprite2D" parent="PrallaxCLouds"]
+texture_filter = 1
+position = Vector2(503, 63)
+texture = ExtResource("8_nquwp")
+
+[node name="BackgroundParallax" type="Parallax2D" parent="."]
+visible = false
+scroll_offset = Vector2(0, 41)
+repeat_size = Vector2(787.24, 0)
+autoscroll = Vector2(130.37, 0)
+
+[node name="Background" type="Sprite2D" parent="BackgroundParallax"]
+position = Vector2(400, 193)
+texture = ExtResource("1_0b6av")

@@ -1,0 +1,109 @@
+[gd_scene load_steps=45 format=3 uid="uid://okr054uls6cp"]
+
+[ext_resource type="Script" path="res://Scripts/level_generator.gd" id="1_ltcbh"]
+[ext_resource type="Texture2D" uid="uid://dimbcxq4hxbrv" path="res://Assets/Spritesheets/BuldingSprites/chicken_store.png" id="2_6lr0o"]
+[ext_resource type="PackedScene" uid="uid://cefafmr7nbeb5" path="res://Scenes/TerrainTiles/FlatTile.tscn" id="2_kkqqv"]
+[ext_resource type="PackedScene" uid="uid://yfuk63lytf5j" path="res://Scenes/TerrainTiles/DoubleUp.tscn" id="3_h2uju"]
+[ext_resource type="Texture2D" uid="uid://b44jkothqj3ps" path="res://Assets/Spritesheets/BuldingSprites/convini.png" id="3_wnyrt"]
+[ext_resource type="Texture2D" uid="uid://cqkafjkoooqu4" path="res://Assets/Spritesheets/BuldingSprites/convini_building.png" id="4_cuvmx"]
+[ext_resource type="PackedScene" uid="uid://b7cqxih05eufm" path="res://Scenes/TerrainTiles/UpTile.tscn" id="4_u02fr"]
+[ext_resource type="Texture2D" uid="uid://bkknxxeobhpsr" path="res://Assets/Spritesheets/BuldingSprites/gyuudon_store.png" id="5_01w1g"]
+[ext_resource type="PackedScene" uid="uid://b54t3lgce2gt6" path="res://Scenes/TerrainTiles/DoubleDown.tscn" id="5_lm5g0"]
+[ext_resource type="Texture2D" uid="uid://choihhjyslmo4" path="res://Assets/Spritesheets/BuldingSprites/koban.png" id="6_fufvi"]
+[ext_resource type="PackedScene" uid="uid://fgyyrlrg66eu" path="res://Scenes/TerrainTiles/DownTile.tscn" id="6_kp2tj"]
+[ext_resource type="Texture2D" uid="uid://h3krh7o6gjba" path="res://Assets/Spritesheets/BuldingSprites/medium_building2.png" id="7_31top"]
+[ext_resource type="Texture2D" uid="uid://c4vlqf0deunbj" path="res://FrontOfBuildingDecorations/NoHouseSpawnAreaForPark1.png" id="8_7dry2"]
+[ext_resource type="PackedScene" uid="uid://bwj2q1bmdh8uo" path="res://Scenes/TerrainTiles/SpecialTiles/TrafficLight.tscn" id="8_h8b4c"]
+[ext_resource type="Texture2D" uid="uid://dd5n1y8k0ldtb" path="res://Assets/Spritesheets/BuldingSprites/medium_building3.png" id="8_m7k8j"]
+[ext_resource type="PackedScene" uid="uid://bbmj3aysh20p0" path="res://Scenes/TerrainTiles/SpecialTiles/Subway/subway1.tscn" id="9_3ggn3"]
+[ext_resource type="PackedScene" uid="uid://b2ssdq234ftgt" path="res://Scenes/TerrainTiles/SpecialTiles/NoSpawnArea.tscn" id="9_62hcu"]
+[ext_resource type="Texture2D" uid="uid://dopvw3fq5m6d3" path="res://Assets/Spritesheets/BuldingSprites/medium_building.png" id="9_lfenw"]
+[ext_resource type="Texture2D" uid="uid://6x8hb8agjv1c" path="res://Assets/Spritesheets/BuldingSprites/ramen_shop.png" id="10_ldwa0"]
+[ext_resource type="PackedScene" uid="uid://de3i6o6byvd4b" path="res://Scenes/TerrainTiles/SpecialTiles/River1/SpecialparkourArea.tscn" id="10_t7gvh"]
+[ext_resource type="Texture2D" uid="uid://dcgo36twa01v0" path="res://Assets/Spritesheets/BuldingSprites/slim_building2.png" id="11_3i43p"]
+[ext_resource type="PackedScene" uid="uid://l83o5250qd2p" path="res://Scenes/RandomGeneratedBuilding.tscn" id="12_a241o"]
+[ext_resource type="Texture2D" uid="uid://b4eahk7cv7nhy" path="res://Assets/Spritesheets/BuldingSprites/slim_building.png" id="12_h0p5v"]
+[ext_resource type="Texture2D" uid="uid://d13fyjb0ca7hg" path="res://Assets/Spritesheets/BuldingSprites/small_building.png" id="13_3yr1l"]
+[ext_resource type="PackedScene" uid="uid://don853ccr35mb" path="res://Scenes/TerrainTiles/SpecialTiles/NoSpawnAreaForBuilding.tscn" id="13_godu2"]
+[ext_resource type="Texture2D" uid="uid://cjw800t2q87y0" path="res://Assets/Spritesheets/BuldingSprites/yaoya.png" id="14_a4yvu"]
+[ext_resource type="Texture2D" uid="uid://c00kf07o0avm4" path="res://Assets/Spritesheets/BuldingSprites/aparment_building.png" id="16_o2nar"]
+[ext_resource type="Texture2D" uid="uid://0e6d67jtic6j" path="res://Assets/Spritesheets/BuldingSprites/big_building1.png" id="17_qajgr"]
+[ext_resource type="Texture2D" uid="uid://bbfabeysc012u" path="res://Assets/Spritesheets/BuldingSprites/big_building2.png" id="18_gxc3t"]
+[ext_resource type="Texture2D" uid="uid://bdm8wb6ei2aa4" path="res://Assets/Spritesheets/BuldingSprites/big_building3.png" id="19_hx8qx"]
+[ext_resource type="PackedScene" uid="uid://bknesh4dk7sym" path="res://Scenes/Tree/Tree1.tscn" id="19_q6ebf"]
+[ext_resource type="PackedScene" uid="uid://dshf3lamkh7ui" path="res://Scenes/Tree/Tree2.tscn" id="20_73qog"]
+[ext_resource type="PackedScene" uid="uid://dlmnqiyn0ti6j" path="res://Scenes/FrontDecorTiles/BusStop1.tscn" id="21_qf84f"]
+[ext_resource type="PackedScene" uid="uid://bhl1js0sc1snn" path="res://Scenes/FrontDecorTiles/BusStop2.tscn" id="22_1i0pv"]
+[ext_resource type="PackedScene" uid="uid://jbviyganhjh6" path="res://Scenes/FrontDecorTiles/BusStop3.tscn" id="23_hqyxu"]
+[ext_resource type="PackedScene" uid="uid://duajoymchambi" path="res://Scenes/FrontDecorTiles/BusStop4.tscn" id="24_nabvb"]
+[ext_resource type="PackedScene" uid="uid://cyck6hg6x4vp0" path="res://Scenes/FrontDecorTiles/BusStop5.tscn" id="25_5yiis"]
+[ext_resource type="PackedScene" uid="uid://h3ycpn7ngx1u" path="res://Scenes/ElectricPoleTiles/Pole1.tscn" id="26_6swmg"]
+[ext_resource type="PackedScene" uid="uid://bufx2t38dkmyw" path="res://Scenes/ElectricPoleTiles/Pole2.tscn" id="27_24c2x"]
+[ext_resource type="PackedScene" uid="uid://cmtq7f1hvunnh" path="res://Scenes/Atmosphere/TransparentBlue.tscn" id="27_moda0"]
+[ext_resource type="PackedScene" uid="uid://cq800ex4bv15c" path="res://Scenes/ElectricPoleTiles/Pole3.tscn" id="28_8brxg"]
+[ext_resource type="PackedScene" uid="uid://cnchq5d84xjht" path="res://Scenes/ElectricPoleTiles/Pole4.tscn" id="29_rt1q6"]
+[ext_resource type="PackedScene" uid="uid://c5btsfobyv8uq" path="res://Scenes/ElectricPoleTiles/Pole5.tscn" id="30_injxv"]
+[ext_resource type="PackedScene" uid="uid://ckbm2dgmdrv74" path="res://Scenes/TerrainTiles/SpecialTiles/Park.tscn" id="36_a6v76"]
+
+[node name="LevelGenerator" type="Node2D" node_paths=PackedStringArray("Parallax")]
+script = ExtResource("1_ltcbh")
+Parallax = [NodePath("BackBuildings"), NodePath("MidBackBuilding"), NodePath("Atmosphere"), NodePath("MidBuilding"), NodePath("MidDecorBuilding"), NodePath("FrontBuildings"), NodePath("Tree"), NodePath("FrontDecorBuildings"), NodePath("LightPole")]
+straight_terrain = Array[PackedScene]([ExtResource("2_kkqqv")])
+upwards = Array[PackedScene]([ExtResource("3_h2uju"), ExtResource("4_u02fr")])
+downwards = Array[PackedScene]([ExtResource("5_lm5g0"), ExtResource("6_kp2tj")])
+SpecialTiles = Array[PackedScene]([ExtResource("36_a6v76"), ExtResource("8_h8b4c"), ExtResource("9_3ggn3"), ExtResource("10_t7gvh")])
+NoSpawnTileForSpecialTiles = Array[Resource]([ExtResource("8_7dry2"), ExtResource("9_62hcu")])
+SpecialTilesAmount = 10
+front_spritesnew = Array[Resource]([ExtResource("12_a241o"), ExtResource("13_godu2")])
+front_sprites = Array[Resource]([ExtResource("2_6lr0o"), ExtResource("3_wnyrt"), ExtResource("4_cuvmx"), ExtResource("5_01w1g"), ExtResource("6_fufvi"), ExtResource("7_31top"), ExtResource("8_m7k8j"), ExtResource("9_lfenw"), ExtResource("10_ldwa0"), ExtResource("11_3i43p"), ExtResource("12_h0p5v"), ExtResource("13_3yr1l"), ExtResource("14_a4yvu")])
+back_sprites = Array[Resource]([ExtResource("16_o2nar"), ExtResource("17_qajgr"), ExtResource("18_gxc3t"), ExtResource("19_hx8qx")])
+Atmosphere_sprites = Array[Resource]([ExtResource("27_moda0")])
+Tree_sprites = Array[Resource]([ExtResource("19_q6ebf"), ExtResource("20_73qog")])
+FrontDecor_sprites = Array[Resource]([ExtResource("21_qf84f"), ExtResource("22_1i0pv"), ExtResource("23_hqyxu"), ExtResource("24_nabvb"), ExtResource("25_5yiis")])
+ElectricPole_sprites = Array[Resource]([ExtResource("26_6swmg"), ExtResource("27_24c2x"), ExtResource("28_8brxg"), ExtResource("29_rt1q6"), ExtResource("30_injxv")])
+
+[node name="BackBuildings" type="Parallax2D" parent="."]
+z_index = -9
+texture_filter = 1
+scroll_scale = Vector2(0.5, 1)
+
+[node name="MidBackBuilding" type="Parallax2D" parent="."]
+z_index = -8
+scroll_scale = Vector2(0.7, 1)
+
+[node name="Atmosphere" type="Parallax2D" parent="."]
+z_index = -7
+
+[node name="MidBuilding" type="Parallax2D" parent="."]
+z_index = -6
+scroll_scale = Vector2(0.8, 1)
+
+[node name="MidDecorBuilding" type="Parallax2D" parent="."]
+z_index = -5
+scroll_scale = Vector2(0.8, 1)
+
+[node name="FrontBuildings" type="Parallax2D" parent="."]
+z_index = -4
+texture_filter = 1
+
+[node name="Tree" type="Parallax2D" parent="."]
+z_index = -3
+texture_filter = 1
+
+[node name="FrontDecorBuildings" type="Parallax2D" parent="."]
+z_index = -2
+
+[node name="LightPole" type="Parallax2D" parent="."]
+z_index = -1
+
+[node name="MidBackMarker" type="Marker2D" parent="."]
+position = Vector2(0, 307)
+
+[node name="MidMarker" type="Marker2D" parent="."]
+position = Vector2(0, 307)
+
+[node name="FrontMarker" type="Marker2D" parent="."]
+position = Vector2(0, 307)
+
+[node name="BackMarker" type="Marker2D" parent="."]
+position = Vector2(0, 306)

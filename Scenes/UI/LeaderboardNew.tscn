@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://j443at23fbhs"]
+
+[ext_resource type="PackedScene" uid="uid://creps3db8ds6g" path="res://Scenes/UI/InputLetter.tscn" id="1_3thr5"]
+[ext_resource type="Script" path="res://Scenes/UI/leaderboard_blink.gd" id="1_eyr48"]
+[ext_resource type="LabelSettings" uid="uid://ctm2s2dgfv72b" path="res://Assets/LabelSettings/score_label_settings.tres" id="2_5iey6"]
+
+[node name="ScoreEntry" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+script = ExtResource("1_eyr48")
+
+[node name="Name" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="InputLetter" parent="Name" instance=ExtResource("1_3thr5")]
+layout_mode = 2
+
+[node name="InputLetter2" parent="Name" instance=ExtResource("1_3thr5")]
+layout_mode = 2
+
+[node name="InputLetter3" parent="Name" instance=ExtResource("1_3thr5")]
+layout_mode = 2
+
+[node name="InputLetter4" parent="Name" instance=ExtResource("1_3thr5")]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="."]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+
+[node name="Score" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+text = "0000000"
+label_settings = ExtResource("2_5iey6")
+vertical_alignment = 1

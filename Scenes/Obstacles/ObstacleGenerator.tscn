@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dae6tofgquroa"]
+
+[ext_resource type="Script" path="res://Scripts/obstacle_generator.gd" id="1_o53ou"]
+[ext_resource type="PackedScene" uid="uid://cbgpw6dbbty" path="res://Scenes/Obstacles/Obstacle.tscn" id="2_cvtge"]
+
+[node name="ObstacleGenerator" type="Node2D" node_paths=PackedStringArray("spawn_node")]
+z_index = 5
+script = ExtResource("1_o53ou")
+obstacle_scene = ExtResource("2_cvtge")
+spawn_time_min = 2
+spawn_time_max = 3
+spawn_node = NodePath("Obstacles")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.5
+
+[node name="Marker" type="Marker2D" parent="."]
+position = Vector2(2000, 278)
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

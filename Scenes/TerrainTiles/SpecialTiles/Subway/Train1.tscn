@@ -1,0 +1,230 @@
+[gd_scene load_steps=30 format=3 uid="uid://672ms8xltmlv"]
+
+[ext_resource type="Script" path="res://Scenes/TerrainTiles/SpecialTiles/Subway/train_1.gd" id="1_0hj35"]
+[ext_resource type="Texture2D" uid="uid://dyegablk2gmno" path="res://Assets/Spritesheets/Obstacles/TrainSection1.png" id="1_mj65a"]
+[ext_resource type="Texture2D" uid="uid://c4y20d1vvpj2k" path="res://Assets/Spritesheets/Obstacles/TrainSection2.png" id="2_02wu8"]
+[ext_resource type="Texture2D" uid="uid://bvsycnm0hj34j" path="res://Assets/Spritesheets/Obstacles/TrainSection3.png" id="3_21fc0"]
+[ext_resource type="Texture2D" uid="uid://bfdiptycycnp4" path="res://FrontOfBuildingDecorations/cautionSign2.png" id="4_kc186"]
+[ext_resource type="AudioStream" uid="uid://buglfksmwbkkl" path="res://Assets/Audio/Sound/TrainSoundEffect.mp3" id="6_o7kok"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qgxl"]
+atlas = ExtResource("1_mj65a")
+region = Rect2(0, 0, 438, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xehrw"]
+atlas = ExtResource("1_mj65a")
+region = Rect2(438, 0, 438, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfx33"]
+atlas = ExtResource("1_mj65a")
+region = Rect2(876, 0, 438, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdmn1"]
+atlas = ExtResource("1_mj65a")
+region = Rect2(1314, 0, 438, 112)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iej8g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qgxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xehrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfx33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdmn1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaft1"]
+atlas = ExtResource("2_02wu8")
+region = Rect2(0, 0, 438, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p20gs"]
+atlas = ExtResource("2_02wu8")
+region = Rect2(438, 0, 438, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noddx"]
+atlas = ExtResource("2_02wu8")
+region = Rect2(876, 0, 438, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yik4e"]
+atlas = ExtResource("2_02wu8")
+region = Rect2(1314, 0, 438, 112)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5hcr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oaft1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p20gs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noddx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yik4e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2h1p"]
+atlas = ExtResource("3_21fc0")
+region = Rect2(0, 0, 438, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v7ph"]
+atlas = ExtResource("3_21fc0")
+region = Rect2(438, 0, 438, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bpiw"]
+atlas = ExtResource("3_21fc0")
+region = Rect2(876, 0, 438, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahwrr"]
+atlas = ExtResource("3_21fc0")
+region = Rect2(1314, 0, 438, 112)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rbs4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2h1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v7ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bpiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahwrr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_aydd0"]
+colors = PackedColorArray(0, 0, 0, 1, 0.938874, 0.938874, 1.54018e-06, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3j2cb"]
+gradient = SubResource("Gradient_aydd0")
+fill_from = Vector2(0.794872, 0.128205)
+fill_to = Vector2(1, 0.324786)
+
+[sub_resource type="Gradient" id="Gradient_odrxy"]
+colors = PackedColorArray(0, 0, 0, 1, 0.937255, 0.937255, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gr6k8"]
+gradient = SubResource("Gradient_odrxy")
+fill_from = Vector2(0.418803, 0.350427)
+fill_to = Vector2(0.226496, 0.555556)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yg3ue"]
+size = Vector2(1288, 69)
+
+[sub_resource type="Gradient" id="Gradient_1cecr"]
+colors = PackedColorArray(1, 0.462252, 0.283376, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wo0yw"]
+gradient = SubResource("Gradient_1cecr")
+fill = 1
+fill_from = Vector2(0.5, 0.478632)
+fill_to = Vector2(0.773504, 0.867521)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l765n"]
+size = Vector2(60.5556, 96.1111)
+
+[node name="Train1" type="StaticBody2D"]
+z_index = 5
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_0hj35")
+
+[node name="TrainCart1" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(219, -56)
+sprite_frames = SubResource("SpriteFrames_iej8g")
+autoplay = "default"
+frame_progress = 0.138809
+
+[node name="TrainCart2" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(1083, -56)
+sprite_frames = SubResource("SpriteFrames_s5hcr")
+autoplay = "default"
+frame_progress = 0.733454
+
+[node name="TrainCart3" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(651, -56)
+sprite_frames = SubResource("SpriteFrames_rbs4y")
+autoplay = "default"
+frame_progress = 0.122176
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-161, -28)
+scale = Vector2(5.34375, 0.875)
+texture = SubResource("GradientTexture2D_3j2cb")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(1463, -33)
+scale = Vector2(5.34375, 0.875)
+texture = SubResource("GradientTexture2D_gr6k8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(651, -65.5)
+rotation = 0.000630032
+shape = SubResource("RectangleShape2D_yg3ue")
+
+[node name="CautionSign2" type="Sprite2D" parent="."]
+position = Vector2(-259, -58)
+texture = ExtResource("4_kc186")
+
+[node name="PointLight2D3" type="PointLight2D" parent="CautionSign2"]
+position = Vector2(0, 3)
+scale = Vector2(-0.754658, -0.791145)
+texture = SubResource("GradientTexture2D_wo0yw")
+
+[node name="CautionSign3" type="Sprite2D" parent="."]
+position = Vector2(-342, -58)
+texture = ExtResource("4_kc186")
+
+[node name="PointLight2D3" type="PointLight2D" parent="CautionSign3"]
+position = Vector2(0, 3)
+scale = Vector2(-0.754658, -0.791145)
+texture = SubResource("GradientTexture2D_wo0yw")
+
+[node name="CautionSign4" type="Sprite2D" parent="."]
+position = Vector2(-179, -58)
+texture = ExtResource("4_kc186")
+
+[node name="PointLight2D3" type="PointLight2D" parent="CautionSign4"]
+position = Vector2(0, 3)
+scale = Vector2(-0.754658, -0.791145)
+texture = SubResource("GradientTexture2D_wo0yw")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(35.8334, -48.0556)
+shape = SubResource("RectangleShape2D_l765n")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_o7kok")
+autoplay = true
+max_distance = 1500.0
+panning_strength = 2.0
+bus = &"Effects"
+parameters/looping = true

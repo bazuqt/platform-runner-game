@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyck6hg6x4vp0"]
+
+[ext_resource type="Texture2D" uid="uid://bns0m1afmrtrr" path="res://FrontOfBuildingDecorations/BusStop5.png" id="1_3mba1"]
+[ext_resource type="Script" path="res://Scenes/FrontDecorTiles/bus_stop_5.gd" id="1_ixnym"]
+
+[node name="BusStop5" type="Node2D"]
+script = ExtResource("1_ixnym")
+
+[node name="BusStop5" type="Sprite2D" parent="."]
+position = Vector2(0, -75)
+texture = ExtResource("1_3mba1")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(300, 0)
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(302, -89)

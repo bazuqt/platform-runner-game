@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmtq7f1hvunnh"]
+
+[ext_resource type="Script" path="res://Scenes/Atmosphere/transparent_blue.gd" id="1_c5mdh"]
+[ext_resource type="Texture2D" uid="uid://nspl81jqxqqw" path="res://Assets/Spritesheets/Color/white.png" id="2_yydmd"]
+
+[node name="TransparentBlue" type="Node2D"]
+position = Vector2(320, 3)
+scale = Vector2(1, 3)
+script = ExtResource("1_c5mdh")
+
+[node name="Blue" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.454902)
+self_modulate = Color(1, 1, 1, 0.435294)
+position = Vector2(0, -320)
+texture = ExtResource("2_yydmd")
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-315, -50)
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(640, 0)

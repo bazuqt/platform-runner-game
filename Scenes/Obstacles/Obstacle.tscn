@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://cbgpw6dbbty"]
+
+[ext_resource type="Script" path="res://Scripts/obstacle.gd" id="1_bfp2c"]
+[ext_resource type="AudioStream" uid="uid://c7hvkhn04sxfd" path="res://Assets/Audio/Sound/CarSoundEffect.mp3" id="2_fiyl8"]
+[ext_resource type="SpriteFrames" uid="uid://cyejbnn7xdmdx" path="res://Assets/SpriteFrames/Biker.tres" id="2_peeei"]
+[ext_resource type="SpriteFrames" uid="uid://be07c4vdiucmy" path="res://Assets/SpriteFrames/BlueCar.tres" id="3_dei4x"]
+[ext_resource type="SpriteFrames" uid="uid://d0mu1qul127ix" path="res://Assets/SpriteFrames/LightBlueCar.tres" id="4_v6my5"]
+[ext_resource type="SpriteFrames" uid="uid://d1fr1i2tv50io" path="res://Assets/SpriteFrames/PinkCar.tres" id="5_4nokg"]
+[ext_resource type="SpriteFrames" uid="uid://b0gyiibiidb21" path="res://Assets/SpriteFrames/OldMan.tres" id="6_1r2ik"]
+[ext_resource type="SpriteFrames" uid="uid://c0ei2ib8u7oau" path="res://Assets/SpriteFrames/OldLady.tres" id="6_4vihk"]
+
+[node name="Obstacle" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_bfp2c")
+moving_speed = Array[float]([50.0, 250.0, 150.0, 150.0, 20.0, 0.0])
+plays_sound = Array[bool]([false, true, true, true, false, false])
+sounds = Array[AudioStreamMP3]([null, ExtResource("2_fiyl8"), ExtResource("2_fiyl8"), ExtResource("2_fiyl8"), null, null])
+sprite_frames = Array[SpriteFrames]([ExtResource("2_peeei"), ExtResource("3_dei4x"), ExtResource("4_v6my5"), ExtResource("5_4nokg"), ExtResource("6_4vihk"), ExtResource("6_1r2ik")])
+ph_values = Array[Vector4]([Vector4(34, 30, -46, 15), Vector4(35, 30, -74.5, 15), Vector4(32, 30, -80, 15), Vector4(32, 30, -80, 15), Vector4(21, 35, -50, 10), Vector4(21, 35, -50, 10)])
+hb_values = Array[Vector4]([Vector4(49, 33, -3, 13.5), Vector4(105.25, 29.375, 0.125, 11.5), Vector4(104.5, 36.5, -2.25, 12.25), Vector4(104.5, 36.5, -2.25, 12.25), Vector4(22, 32, -1, 13), Vector4(22, 38, -3, 10)])
+transforms = Array[Transform2D]([Transform2D(1.3, 0, 0, 1.3, 0, -12), Transform2D(3, 0, 0, 3, 0, 0), Transform2D(2, 0, 0, 2, 0, 0), Transform2D(2, 0, 0, 2, 0, 0), Transform2D(1, 0, 0, 1, 0, 0), Transform2D(1, 0, 0, 1, 0, 0)])
+
+[node name="PointsHitbox" type="CollisionShape2D" parent="."]
+debug_color = Color(0.565143, 0.549423, 0.280489, 0.42)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Hitbox" type="CollisionShape2D" parent="Hitbox"]
+debug_color = Color(0.885978, 0.0882576, 0.772352, 0.42)
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(28, -25.5)
+scale = Vector2(1, 18.05)
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+max_distance = 500.0
+panning_strength = 2.5
+bus = &"Effects"
+
+[connection signal="screen_exited" from="OnScreen" to="." method="_on_on_screen_screen_exited"]

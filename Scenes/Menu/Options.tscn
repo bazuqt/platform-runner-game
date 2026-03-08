@@ -1,0 +1,247 @@
+[gd_scene load_steps=33 format=3 uid="uid://dhwsm1djco0y4"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/options.gd" id="1_x4rk0"]
+[ext_resource type="Texture2D" uid="uid://ddwr3exd1ptf4" path="res://Assets/Buttons/toggle_button.png" id="2_52y6q"]
+[ext_resource type="Texture2D" uid="uid://6xs8ay88nh5m" path="res://Assets/Buttons/options_back_button.png" id="2_p2fp4"]
+[ext_resource type="Texture2D" uid="uid://bmq5a855tr1yl" path="res://Assets/UI/Grabber.png" id="2_wfubs"]
+[ext_resource type="Texture2D" uid="uid://tutikfcfwobb" path="res://Assets/UI/Slider.png" id="3_b0xw8"]
+[ext_resource type="Texture2D" uid="uid://bx61fpvo4p6r7" path="res://Assets/Buttons/mute_button.png" id="3_p4w5f"]
+[ext_resource type="Texture2D" uid="uid://b2v6l4i5ltbw0" path="res://Assets/Buttons/optioins_background.png" id="3_pmnt0"]
+[ext_resource type="Texture2D" uid="uid://vfx7um51ebsi" path="res://Assets/UI/grabber_area.png" id="4_kwrv3"]
+[ext_resource type="LabelSettings" uid="uid://clih3f77elq8t" path="res://Assets/LabelSettings/ready_level.tres" id="4_spus1"]
+[ext_resource type="LabelSettings" uid="uid://ckpvy24rhhnx6" path="res://Assets/LabelSettings/options_label.tres" id="5_jkmrf"]
+[ext_resource type="LabelSettings" uid="uid://dt5qnjoyvsbla" path="res://Assets/LabelSettings/slider_labels.tres" id="6_3kkn8"]
+[ext_resource type="Script" path="res://Scripts/Audio/main_menu_effects.gd" id="7_xs7cg"]
+[ext_resource type="AudioStream" uid="uid://dkl7wxmejbe2y" path="res://Assets/Audio/Sound/ButtonHoverSoundEffect.mp3" id="8_vuq0l"]
+[ext_resource type="AudioStream" uid="uid://bg6pnh3w8npjc" path="res://Assets/Audio/Sound/ButtonHover2SoundEffect.mp3" id="9_xw0li"]
+[ext_resource type="AudioStream" uid="uid://bg6j36mp1knb7" path="res://Assets/Audio/Sound/ButtonHover3SoundEffect.mp3" id="10_yjd6g"]
+[ext_resource type="AudioStream" uid="uid://d3a6epwpqmkcc" path="res://Assets/Audio/Sound/ButtonHover4SoundEffect.mp3" id="11_2kaph"]
+[ext_resource type="AudioStream" uid="uid://f3fdrj78rmn4" path="res://Assets/Audio/Sound/ButtonHover5SoundEffect.mp3" id="12_6kpux"]
+[ext_resource type="AudioStream" uid="uid://ri72wwptvwob" path="res://Assets/Audio/Sound/ButtonHover6SoundEffect.mp3" id="13_kfq1f"]
+[ext_resource type="AudioStream" uid="uid://blqstvibucdp" path="res://Assets/Audio/Sound/ButtonSelection4SoundEffect.mp3" id="14_0j4uv"]
+[ext_resource type="AudioStream" uid="uid://cq6jc17ldtcwr" path="res://Assets/Audio/Sound/ButtonSelection3SoundEffect.mp3" id="14_s8mah"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2hoq"]
+atlas = ExtResource("3_p4w5f")
+region = Rect2(0, 0, 16, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3vvk"]
+atlas = ExtResource("3_p4w5f")
+region = Rect2(16, 0, 16, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lq30l"]
+texture = ExtResource("3_b0xw8")
+texture_margin_top = 15.0
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4jj1b"]
+texture = ExtResource("4_kwrv3")
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rrf8q"]
+texture = ExtResource("3_b0xw8")
+texture_margin_top = 15.0
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nehph"]
+texture = ExtResource("4_kwrv3")
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+axis_stretch_horizontal = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_641j2"]
+atlas = ExtResource("2_52y6q")
+region = Rect2(471, 0, 157, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gikua"]
+atlas = ExtResource("2_52y6q")
+region = Rect2(0, 0, 157, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bku76"]
+atlas = ExtResource("2_52y6q")
+region = Rect2(157, 0, 157, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g47d"]
+atlas = ExtResource("2_p2fp4")
+region = Rect2(0, 0, 157, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u2br"]
+atlas = ExtResource("2_p2fp4")
+region = Rect2(314, 0, 157, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uja0x"]
+atlas = ExtResource("2_p2fp4")
+region = Rect2(157, 0, 157, 0)
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x4rk0")
+test_sound = ExtResource("11_2kaph")
+
+[node name="OptionsButtons" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 390.0
+offset_right = 640.0
+offset_bottom = 710.0
+texture = ExtResource("3_pmnt0")
+
+[node name="OptionStack" type="VBoxContainer" parent="OptionsButtons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -78.5
+offset_top = -87.0
+offset_right = 78.5
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Title" type="Label" parent="OptionsButtons/OptionStack"]
+layout_mode = 2
+text = "OPTIONS"
+label_settings = ExtResource("4_spus1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicLabel" type="Label" parent="OptionsButtons/OptionStack"]
+layout_mode = 2
+text = "Music"
+label_settings = ExtResource("5_jkmrf")
+
+[node name="Volume" type="HBoxContainer" parent="OptionsButtons/OptionStack"]
+layout_mode = 2
+
+[node name="MuteVolume" type="TextureButton" parent="OptionsButtons/OptionStack/Volume"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_w2hoq")
+texture_pressed = SubResource("AtlasTexture_c3vvk")
+
+[node name="VSeparator" type="VSeparator" parent="OptionsButtons/OptionStack/Volume"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="VolumeSlider" type="HSlider" parent="OptionsButtons/OptionStack/Volume"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("2_wfubs")
+theme_override_icons/grabber_highlight = ExtResource("2_wfubs")
+theme_override_styles/slider = SubResource("StyleBoxTexture_lq30l")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_4jj1b")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_4jj1b")
+min_value = -20.0
+max_value = 10.0
+step = 3.0
+value = -8.0
+
+[node name="VolumeLabel" type="Label" parent="OptionsButtons/OptionStack/Volume"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+text = "4
+"
+label_settings = ExtResource("6_3kkn8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundEffectsLabel" type="Label" parent="OptionsButtons/OptionStack"]
+layout_mode = 2
+text = "sounds"
+label_settings = ExtResource("5_jkmrf")
+
+[node name="Effects" type="HBoxContainer" parent="OptionsButtons/OptionStack"]
+layout_mode = 2
+
+[node name="MuteEffects" type="TextureButton" parent="OptionsButtons/OptionStack/Effects"]
+unique_name_in_owner = true
+layout_mode = 2
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_w2hoq")
+texture_pressed = SubResource("AtlasTexture_c3vvk")
+
+[node name="VSeparator" type="VSeparator" parent="OptionsButtons/OptionStack/Effects"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="SFXSlider" type="HSlider" parent="OptionsButtons/OptionStack/Effects"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("2_wfubs")
+theme_override_icons/grabber_highlight = ExtResource("2_wfubs")
+theme_override_styles/slider = SubResource("StyleBoxTexture_rrf8q")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_nehph")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_nehph")
+min_value = -20.0
+max_value = 10.0
+step = 3.0
+value = -2.0
+
+[node name="EffectsLabel" type="Label" parent="OptionsButtons/OptionStack/Effects"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+text = "6"
+label_settings = ExtResource("6_3kkn8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mode" type="TextureButton" parent="OptionsButtons/OptionStack"]
+layout_mode = 2
+size_flags_horizontal = 4
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_641j2")
+texture_pressed = SubResource("AtlasTexture_gikua")
+texture_hover = SubResource("AtlasTexture_bku76")
+texture_disabled = SubResource("AtlasTexture_gikua")
+
+[node name="Back" type="TextureButton" parent="OptionsButtons/OptionStack"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+disabled = true
+texture_normal = SubResource("AtlasTexture_6g47d")
+texture_pressed = SubResource("AtlasTexture_3u2br")
+texture_hover = SubResource("AtlasTexture_uja0x")
+texture_disabled = SubResource("AtlasTexture_3u2br")
+
+[node name="InitPos" type="Marker2D" parent="."]
+position = Vector2(0, 360)
+
+[node name="EndPos" type="Marker2D" parent="."]
+
+[node name="Effects" type="AudioStreamPlayer2D" parent="."]
+max_polyphony = 2
+bus = &"Effects"
+script = ExtResource("7_xs7cg")
+hover_sound_effects = Array[AudioStreamMP3]([ExtResource("8_vuq0l"), ExtResource("9_xw0li"), ExtResource("10_yjd6g"), ExtResource("11_2kaph"), ExtResource("12_6kpux"), ExtResource("13_kfq1f")])
+start_game_effect = ExtResource("14_0j4uv")
+button_sound_effect = ExtResource("14_s8mah")
+
+[connection signal="toggled" from="OptionsButtons/OptionStack/Volume/MuteVolume" to="." method="_on_mute_volume_toggled"]
+[connection signal="value_changed" from="OptionsButtons/OptionStack/Volume/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="toggled" from="OptionsButtons/OptionStack/Effects/MuteEffects" to="." method="_on_mute_effects_toggled"]
+[connection signal="value_changed" from="OptionsButtons/OptionStack/Effects/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="mouse_entered" from="OptionsButtons/OptionStack/Mode" to="Effects" method="play_hover_effect"]
+[connection signal="pressed" from="OptionsButtons/OptionStack/Mode" to="Effects" method="play_button_clicked_effect"]
+[connection signal="toggled" from="OptionsButtons/OptionStack/Mode" to="." method="_on_mode_toggled"]
+[connection signal="mouse_entered" from="OptionsButtons/OptionStack/Back" to="Effects" method="play_hover_effect"]
+[connection signal="pressed" from="OptionsButtons/OptionStack/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="OptionsButtons/OptionStack/Back" to="Effects" method="play_start_game_click_effect"]

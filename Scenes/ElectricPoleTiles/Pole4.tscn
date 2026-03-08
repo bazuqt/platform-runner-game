@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnchq5d84xjht"]
+
+[ext_resource type="Texture2D" uid="uid://bmb38juysf85m" path="res://Assets/Spritesheets/FrontOfBuildingDecorations/lightpole4.png" id="1_mn48g"]
+[ext_resource type="Script" path="res://Scenes/ElectricPoleTiles/pole_4.gd" id="1_rl3nt"]
+
+[node name="Pole4" type="Node2D"]
+script = ExtResource("1_rl3nt")
+
+[node name="Lightpole4" type="Sprite2D" parent="."]
+position = Vector2(19, -88)
+texture = ExtResource("1_mn48g")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(300, 0)
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(301, -44)

@@ -1,0 +1,14 @@
+CollisionShape2D
+Area2D
+Label
+CollisionPolygon2D
+Camera2D
+Polygon2D
+Sprite2D
+Node2D
+AudioStreamPlayer2D
+AudioListener2D
+VBoxContainer
+HBoxContainer
+TextureRect
+VSeparator

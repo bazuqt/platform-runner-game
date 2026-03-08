@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://gr7dbn1icnbd"]
+
+[ext_resource type="Script" path="res://Scripts/starting_platform.gd" id="1_duul0"]
+[ext_resource type="Texture2D" uid="uid://dxcr27eb50o18" path="res://Assets/Spritesheets/Floor/sidewalk.png" id="2_ejodj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjb0c"]
+size = Vector2(640, 55)
+
+[node name="StartingPlatform" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_duul0")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(320, 0)
+rect = Rect2(0, -27.5, 20, 55)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ejodj")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fjb0c")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_on_screen_screen_exited"]

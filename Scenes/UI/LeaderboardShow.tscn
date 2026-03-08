@@ -1,0 +1,106 @@
+[gd_scene load_steps=15 format=3 uid="uid://bjodvjkl344nl"]
+
+[ext_resource type="Script" path="res://Scripts/leaderboard_show.gd" id="1_51qku"]
+[ext_resource type="LabelSettings" uid="uid://ctm2s2dgfv72b" path="res://Assets/LabelSettings/score_label_settings.tres" id="1_s7cr5"]
+[ext_resource type="Texture2D" uid="uid://dftjs87hqmpf4" path="res://Assets/Buttons/back_button_lead.png" id="3_v1bbq"]
+[ext_resource type="Script" path="res://Scripts/Audio/main_menu_effects.gd" id="4_4ebef"]
+[ext_resource type="AudioStream" uid="uid://dkl7wxmejbe2y" path="res://Assets/Audio/Sound/ButtonHoverSoundEffect.mp3" id="5_nr6ha"]
+[ext_resource type="AudioStream" uid="uid://bg6pnh3w8npjc" path="res://Assets/Audio/Sound/ButtonHover2SoundEffect.mp3" id="6_bjlvp"]
+[ext_resource type="AudioStream" uid="uid://bg6j36mp1knb7" path="res://Assets/Audio/Sound/ButtonHover3SoundEffect.mp3" id="7_irxdp"]
+[ext_resource type="AudioStream" uid="uid://d3a6epwpqmkcc" path="res://Assets/Audio/Sound/ButtonHover4SoundEffect.mp3" id="8_efmrp"]
+[ext_resource type="AudioStream" uid="uid://f3fdrj78rmn4" path="res://Assets/Audio/Sound/ButtonHover5SoundEffect.mp3" id="9_51ibf"]
+[ext_resource type="AudioStream" uid="uid://ri72wwptvwob" path="res://Assets/Audio/Sound/ButtonHover6SoundEffect.mp3" id="10_xl88i"]
+[ext_resource type="AudioStream" uid="uid://blqstvibucdp" path="res://Assets/Audio/Sound/ButtonSelection4SoundEffect.mp3" id="11_jtnor"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxhaj"]
+atlas = ExtResource("3_v1bbq")
+region = Rect2(0, 0, 128, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edv6d"]
+atlas = ExtResource("3_v1bbq")
+region = Rect2(256, 0, 128, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6tla"]
+atlas = ExtResource("3_v1bbq")
+region = Rect2(128, 0, 128, 0)
+
+[node name="LeaderboardShow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_51qku")
+
+[node name="NoScoresLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 360.0
+offset_right = 640.0
+offset_bottom = 720.0
+text = "No Scores Yet"
+label_settings = ExtResource("1_s7cr5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scores" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 350.0
+offset_right = 40.0
+offset_bottom = 390.0
+
+[node name="HighScoresLabel" type="Label" parent="Scores"]
+custom_minimum_size = Vector2(640, 80)
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 80.0
+text = "high scores"
+label_settings = ExtResource("1_s7cr5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollHighScores" type="ScrollContainer" parent="Scores"]
+layout_mode = 2
+offset_top = 80.0
+offset_right = 640.0
+offset_bottom = 279.0
+scroll_vertical_custom_step = 10.0
+horizontal_scroll_mode = 0
+
+[node name="HighScores" type="VBoxContainer" parent="Scores/ScrollHighScores"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Back" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 679.0
+offset_right = 384.0
+offset_bottom = 724.0
+texture_normal = SubResource("AtlasTexture_dxhaj")
+texture_pressed = SubResource("AtlasTexture_edv6d")
+texture_hover = SubResource("AtlasTexture_i6tla")
+texture_disabled = SubResource("AtlasTexture_edv6d")
+
+[node name="ScoreInitPos" type="Marker2D" parent="."]
+position = Vector2(0, 350)
+
+[node name="ScoreEndPos" type="Marker2D" parent="."]
+
+[node name="ButtonInitPos" type="Marker2D" parent="."]
+position = Vector2(256, 679)
+
+[node name="ButtonEndPos" type="Marker2D" parent="."]
+position = Vector2(256, 300)
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+bus = &"Effects"
+script = ExtResource("4_4ebef")
+hover_sound_effects = Array[AudioStreamMP3]([ExtResource("5_nr6ha"), ExtResource("6_bjlvp"), ExtResource("7_irxdp"), ExtResource("8_efmrp"), ExtResource("9_51ibf"), ExtResource("10_xl88i")])
+button_sound_effect = ExtResource("11_jtnor")
+
+[connection signal="mouse_entered" from="Back" to="Audio" method="play_hover_effect"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Back" to="Audio" method="play_button_clicked_effect"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cefafmr7nbeb5"]
+
+[ext_resource type="Script" path="res://Scripts/tile.gd" id="1_vta5t"]
+[ext_resource type="Texture2D" uid="uid://dxcr27eb50o18" path="res://Assets/Spritesheets/Floor/sidewalk.png" id="2_exmu7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsox4"]
+size = Vector2(640, 55)
+
+[node name="FlatTile" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_vta5t")
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(242, -15)
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(640, 0)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_exmu7")
+offset = Vector2(320, 0)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(320, 0)
+shape = SubResource("RectangleShape2D_lsox4")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=10 format=3 uid="uid://cujkt4p4ev5ke"]
+
+[ext_resource type="Script" path="res://Scenes/Tests/paralax.gd" id="1_7fl3x"]
+[ext_resource type="Texture2D" uid="uid://c00kf07o0avm4" path="res://Assets/Spritesheets/BuldingSprites/aparment_building.png" id="2_oaea0"]
+[ext_resource type="Texture2D" uid="uid://0e6d67jtic6j" path="res://Assets/Spritesheets/BuldingSprites/big_building1.png" id="3_ln2jw"]
+[ext_resource type="Texture2D" uid="uid://bbfabeysc012u" path="res://Assets/Spritesheets/BuldingSprites/big_building2.png" id="4_waq1x"]
+[ext_resource type="Texture2D" uid="uid://dimbcxq4hxbrv" path="res://Assets/Spritesheets/BuldingSprites/chicken_store.png" id="5_18q4e"]
+[ext_resource type="Texture2D" uid="uid://cqkafjkoooqu4" path="res://Assets/Spritesheets/BuldingSprites/convini_building.png" id="6_4r2vd"]
+[ext_resource type="Texture2D" uid="uid://dopvw3fq5m6d3" path="res://Assets/Spritesheets/BuldingSprites/medium_building.png" id="7_wlmcn"]
+[ext_resource type="Texture2D" uid="uid://b4eahk7cv7nhy" path="res://Assets/Spritesheets/BuldingSprites/slim_building.png" id="8_2j73c"]
+[ext_resource type="Texture2D" uid="uid://d13fyjb0ca7hg" path="res://Assets/Spritesheets/BuldingSprites/small_building.png" id="9_50w70"]
+
+[node name="BackgroundGenerator" type="Node2D"]
+script = ExtResource("1_7fl3x")
+sprites = Array[Resource]([ExtResource("2_oaea0"), ExtResource("3_ln2jw"), ExtResource("4_waq1x"), ExtResource("5_18q4e"), ExtResource("6_4r2vd"), ExtResource("7_wlmcn"), ExtResource("8_2j73c"), ExtResource("9_50w70")])
+
+[node name="Marker" type="Marker2D" parent="."]
+position = Vector2(0, 330)

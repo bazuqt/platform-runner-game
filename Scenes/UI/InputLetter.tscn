@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://creps3db8ds6g"]
+
+[ext_resource type="LabelSettings" uid="uid://ctm2s2dgfv72b" path="res://Assets/LabelSettings/score_label_settings.tres" id="1_eg21q"]
+[ext_resource type="Script" path="res://Scripts/input_letter.gd" id="1_hkoeb"]
+[ext_resource type="Texture2D" uid="uid://cc20lsvw5s3fi" path="res://Assets/UI/down_arrow.png" id="2_o73h4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qip0r"]
+atlas = ExtResource("2_o73h4")
+region = Rect2(0, 0, 20, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syc6i"]
+atlas = ExtResource("2_o73h4")
+region = Rect2(40, 0, 20, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeng6"]
+atlas = ExtResource("2_o73h4")
+region = Rect2(40, 0, 20, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dduf4"]
+atlas = ExtResource("2_o73h4")
+region = Rect2(0, 0, 20, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fhqj"]
+atlas = ExtResource("2_o73h4")
+region = Rect2(40, 0, 20, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoqlp"]
+atlas = ExtResource("2_o73h4")
+region = Rect2(20, 0, 20, 0)
+
+[node name="InputLetter" type="Control"]
+custom_minimum_size = Vector2(36, 56)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 36.0
+offset_bottom = 56.0
+script = ExtResource("1_hkoeb")
+
+[node name="Up" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_right = 27.0
+offset_bottom = 10.0
+rotation = 3.14159
+pivot_offset = Vector2(10, 5)
+texture_normal = SubResource("AtlasTexture_qip0r")
+texture_pressed = SubResource("AtlasTexture_syc6i")
+texture_hover = SubResource("AtlasTexture_xeng6")
+texture_disabled = SubResource("AtlasTexture_syc6i")
+
+[node name="Down" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 46.0
+offset_right = 28.0
+offset_bottom = 56.0
+texture_normal = SubResource("AtlasTexture_dduf4")
+texture_pressed = SubResource("AtlasTexture_1fhqj")
+texture_hover = SubResource("AtlasTexture_yoqlp")
+texture_disabled = SubResource("AtlasTexture_1fhqj")
+
+[node name="Letter" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 14.0
+offset_right = 36.0
+offset_bottom = 46.0
+text = "A"
+label_settings = ExtResource("1_eg21q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
+autostart = true
+
+[connection signal="pressed" from="Up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="Down" to="." method="_on_down_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

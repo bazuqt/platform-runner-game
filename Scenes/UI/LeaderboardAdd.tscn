@@ -1,0 +1,192 @@
+[gd_scene load_steps=22 format=3 uid="uid://2oeq7bn04r7u"]
+
+[ext_resource type="Script" path="res://Scripts/leaderboard_add.gd" id="1_si7hq"]
+[ext_resource type="LabelSettings" uid="uid://ctm2s2dgfv72b" path="res://Assets/LabelSettings/score_label_settings.tres" id="1_u78vt"]
+[ext_resource type="Texture2D" uid="uid://b3tc2rsjx7s4c" path="res://Assets/Spritesheets/skybox.png" id="2_akqmh"]
+[ext_resource type="PackedScene" uid="uid://j443at23fbhs" path="res://Scenes/UI/LeaderboardNew.tscn" id="2_nyqqb"]
+[ext_resource type="Texture2D" uid="uid://0e6d67jtic6j" path="res://Assets/Spritesheets/BuldingSprites/big_building1.png" id="3_7bc75"]
+[ext_resource type="PackedScene" uid="uid://cl8dikuhacm0k" path="res://Scenes/UI/LeaderboardEntry.tscn" id="3_if1yk"]
+[ext_resource type="Texture2D" uid="uid://bbfabeysc012u" path="res://Assets/Spritesheets/BuldingSprites/big_building2.png" id="4_3g4sh"]
+[ext_resource type="Texture2D" uid="uid://qm2u8sb4456t" path="res://Assets/UI/confirm_button.png" id="5_7afe3"]
+[ext_resource type="Texture2D" uid="uid://bdm8wb6ei2aa4" path="res://Assets/Spritesheets/BuldingSprites/big_building3.png" id="5_eayue"]
+[ext_resource type="Script" path="res://Scripts/Audio/main_menu_effects.gd" id="10_luau1"]
+[ext_resource type="AudioStream" uid="uid://dkl7wxmejbe2y" path="res://Assets/Audio/Sound/ButtonHoverSoundEffect.mp3" id="11_5er6w"]
+[ext_resource type="AudioStream" uid="uid://bg6pnh3w8npjc" path="res://Assets/Audio/Sound/ButtonHover2SoundEffect.mp3" id="12_yhkqp"]
+[ext_resource type="AudioStream" uid="uid://bg6j36mp1knb7" path="res://Assets/Audio/Sound/ButtonHover3SoundEffect.mp3" id="13_2rcpq"]
+[ext_resource type="AudioStream" uid="uid://d3a6epwpqmkcc" path="res://Assets/Audio/Sound/ButtonHover4SoundEffect.mp3" id="14_lev53"]
+[ext_resource type="AudioStream" uid="uid://f3fdrj78rmn4" path="res://Assets/Audio/Sound/ButtonHover5SoundEffect.mp3" id="15_362bl"]
+[ext_resource type="AudioStream" uid="uid://ri72wwptvwob" path="res://Assets/Audio/Sound/ButtonHover6SoundEffect.mp3" id="16_wj76x"]
+[ext_resource type="AudioStream" uid="uid://coartxa32bkqt" path="res://Assets/Audio/Sound/ButtonSelection2SoundEffect.mp3" id="17_rgpjv"]
+[ext_resource type="AudioStream" uid="uid://bkgcmw3kboqql" path="res://Assets/Audio/Music/PauseMenuMusicRepeat.mp3" id="18_mfkh5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00ct3"]
+atlas = ExtResource("5_7afe3")
+region = Rect2(0, 0, 128, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkcy3"]
+atlas = ExtResource("5_7afe3")
+region = Rect2(256, 0, 128, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ii8t"]
+atlas = ExtResource("5_7afe3")
+region = Rect2(128, 0, 128, 0)
+
+[node name="LeaderboardAdd" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_si7hq")
+
+[node name="Background" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sky" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("2_akqmh")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="Buildings" type="Control" parent="Background"]
+modulate = Color(0.685191, 0.824099, 0.946847, 1)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Build1" type="TextureRect" parent="Background/Buildings"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 197.0
+offset_right = 461.0
+offset_bottom = 1173.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_7bc75")
+
+[node name="Build4" type="TextureRect" parent="Background/Buildings"]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 205.0
+offset_right = 814.0
+offset_bottom = 1181.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_7bc75")
+
+[node name="Build5" type="TextureRect" parent="Background/Buildings"]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 270.0
+offset_right = 929.0
+offset_bottom = 1246.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_7bc75")
+
+[node name="Build2" type="TextureRect" parent="Background/Buildings"]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 187.0
+offset_right = 838.0
+offset_bottom = 1154.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_3g4sh")
+
+[node name="Build6" type="TextureRect" parent="Background/Buildings"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 236.0
+offset_right = 540.0
+offset_bottom = 1203.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_3g4sh")
+
+[node name="Build3" type="TextureRect" parent="Background/Buildings"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 258.0
+offset_right = 941.0
+offset_bottom = 835.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_eayue")
+
+[node name="Build7" type="TextureRect" parent="Background/Buildings"]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 329.0
+offset_right = 1212.0
+offset_bottom = 906.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_eayue")
+
+[node name="HighScoresLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(640, 80)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "high scores"
+label_settings = ExtResource("1_u78vt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScores" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 74.0
+offset_right = 640.0
+offset_bottom = 355.0
+
+[node name="LeaderboardNew" parent="HighScores" instance=ExtResource("2_nyqqb")]
+layout_mode = 2
+
+[node name="LeaderboardEntry" parent="HighScores" instance=ExtResource("3_if1yk")]
+visible = false
+layout_mode = 2
+
+[node name="LeaderboardEntry2" parent="HighScores" instance=ExtResource("3_if1yk")]
+visible = false
+layout_mode = 2
+
+[node name="LeaderboardEntry3" parent="HighScores" instance=ExtResource("3_if1yk")]
+visible = false
+layout_mode = 2
+
+[node name="LeaderboardEntry4" parent="HighScores" instance=ExtResource("3_if1yk")]
+visible = false
+layout_mode = 2
+
+[node name="Confirm" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 300.0
+offset_right = 384.0
+offset_bottom = 345.0
+texture_normal = SubResource("AtlasTexture_00ct3")
+texture_pressed = SubResource("AtlasTexture_gkcy3")
+texture_hover = SubResource("AtlasTexture_8ii8t")
+texture_disabled = SubResource("AtlasTexture_gkcy3")
+
+[node name="Curtain" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+bus = &"Effects"
+script = ExtResource("10_luau1")
+hover_sound_effects = Array[AudioStreamMP3]([ExtResource("11_5er6w"), ExtResource("12_yhkqp"), ExtResource("13_2rcpq"), ExtResource("14_lev53"), ExtResource("15_362bl"), ExtResource("16_wj76x")])
+button_sound_effect = ExtResource("17_rgpjv")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_mfkh5")
+autoplay = true
+parameters/looping = true
+
+[connection signal="mouse_entered" from="Confirm" to="Audio" method="play_hover_effect"]
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Confirm" to="Audio" method="play_button_clicked_effect"]

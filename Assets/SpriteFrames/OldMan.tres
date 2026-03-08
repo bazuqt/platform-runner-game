@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://b0gyiibiidb21"]
+
+[ext_resource type="Texture2D" uid="uid://by8s5k6djgy2f" path="res://Assets/Spritesheets/Obstacles/Ojisan.png" id="1_a3ftb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2ity"]
+atlas = ExtResource("1_a3ftb")
+region = Rect2(0, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8svi8"]
+atlas = ExtResource("1_a3ftb")
+region = Rect2(48, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df3xw"]
+atlas = ExtResource("1_a3ftb")
+region = Rect2(96, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpnga"]
+atlas = ExtResource("1_a3ftb")
+region = Rect2(144, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfm76"]
+atlas = ExtResource("1_a3ftb")
+region = Rect2(192, 0, 48, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbeti"]
+atlas = ExtResource("1_a3ftb")
+region = Rect2(48, 0, 48, 60)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2ity")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8svi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_df3xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpnga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfm76")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbeti")
+}],
+"loop": true,
+"name": &"game_over",
+"speed": 5.0
+}]

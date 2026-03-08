@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://ca588sqi7bsdt"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_5dvgg"]
+[ext_resource type="PackedScene" uid="uid://ht64pi4po2hg" path="res://Scenes/StartingLevel.tscn" id="2_0akcu"]
+[ext_resource type="Texture2D" uid="uid://d2pn1atvmub52" path="res://Assets/Spritesheets/background.png" id="2_62g8a"]
+[ext_resource type="PackedScene" uid="uid://gr7dbn1icnbd" path="res://Scenes/TerrainTiles/SpecialTiles/Starting platform.tscn" id="2_ev6n2"]
+[ext_resource type="Texture2D" uid="uid://b3tc2rsjx7s4c" path="res://Assets/Spritesheets/skybox.png" id="2_lkvae"]
+[ext_resource type="PackedScene" uid="uid://cd2l4j8607fl2" path="res://Scenes/Player.tscn" id="3_1uok7"]
+[ext_resource type="PackedScene" uid="uid://okr054uls6cp" path="res://Scenes/LevelGenerator.tscn" id="4_i714x"]
+[ext_resource type="PackedScene" uid="uid://dae6tofgquroa" path="res://Scenes/Obstacles/ObstacleGenerator.tscn" id="6_41stq"]
+[ext_resource type="PackedScene" uid="uid://cmtq7f1hvunnh" path="res://Scenes/Atmosphere/TransparentBlue.tscn" id="9_1ylsa"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_5dvgg")
+speed = 300.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.84861, 0.869115, 0.94178, 1)
+
+[node name="Background" type="Parallax2D" parent="."]
+z_index = -30
+texture_filter = 1
+scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(320, -360)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+texture = ExtResource("2_lkvae")
+
+[node name="Mountains" type="Parallax2D" parent="."]
+z_index = -20
+texture_filter = 1
+scroll_scale = Vector2(0.1, 0.1)
+scroll_offset = Vector2(0, 180)
+repeat_size = Vector2(786, 0)
+
+[node name="Background" type="Sprite2D" parent="Mountains"]
+texture_filter = 1
+position = Vector2(0, 50)
+texture = ExtResource("2_62g8a")
+
+[node name="Platform" parent="." instance=ExtResource("2_ev6n2")]
+position = Vector2(320, 334)
+script = null
+
+[node name="LevelGenerator" parent="." node_paths=PackedStringArray("tile_spawn_node") instance=ExtResource("4_i714x")]
+tile_spawn_node = NodePath("../Terrain")
+
+[node name="Terrain" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("3_1uok7")]
+position = Vector2(75, 285.5)
+speed = 500
+
+[node name="ObstacleGenerator" parent="." instance=ExtResource("6_41stq")]
+
+[node name="StartingLevel" parent="." instance=ExtResource("2_0akcu")]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+rotation = -0.523598
+color = Color(0.921569, 0.733333, 0.294118, 1)
+energy = 0.2
+shadow_enabled = true
+shadow_filter = 2
+
+[node name="TransparentWhite" parent="." instance=ExtResource("9_1ylsa")]
+position = Vector2(320, 306)
+scale = Vector2(1, 2.5)
