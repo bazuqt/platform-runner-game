@@ -1,16 +1,2 @@
 res://default_bus_layout.tres
 res://export_presets.cfg
-res://Scenes/TerrainTiles/SpecialTiles/Subway/Train1.tscn
-res://Scripts/Autoloads/global.gd
-res://Assets/LabelSettings/score_label_settings.tres
-res://Assets/LabelSettings/ready_level.tres
-res://Assets/LabelSettings/go_level.tres
-res://Assets/LabelSettings/scoreboard_ssettings.tres
-res://Assets/LabelSettings/options_label.tres
-res://Assets/LabelSettings/slider_labels.tres
-res://Assets/SpriteFrames/Biker.tres
-res://Assets/SpriteFrames/BlueCar.tres
-res://Assets/SpriteFrames/LightBlueCar.tres
-res://Assets/SpriteFrames/PinkCar.tres
-res://Assets/SpriteFrames/OldMan.tres
-res://Assets/SpriteFrames/OldLady.tres
